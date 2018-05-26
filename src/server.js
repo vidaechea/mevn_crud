@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
+const itemRoutes = require('./routes/item.js')
 const app = express();
 
 mongoose.connect('mongodb://localhost/mevn-crud')
@@ -15,6 +16,9 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+
+//Routes
+app.use('/item', itemRoutes);
 
 //Static files
 app.user(express.static(path.join(__dirnpmname, 'public')))
