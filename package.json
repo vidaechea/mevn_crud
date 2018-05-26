@@ -1,0 +1,27 @@
+{
+  "name": "mevn_crud",
+  "version": "1.0.0",
+  "description": "PoC who consist in develop a crud application with MEVN Stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vidaechea@github.com/vidaechea/mevn_crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vidaechea/mevn_crud/issues"
+  },
+  "homepage": "https://github.com/vidaechea/mevn_crud#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.2",
+    "morgan": "^1.9.0"
+  }
+}
