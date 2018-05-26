@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use('/item', itemRoutes);
 
 //Static files
-app.user(express.static(path.join(__dirnpmname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(app.get('port'), () => {
    console.log('Server run port', app.get('port'),);
