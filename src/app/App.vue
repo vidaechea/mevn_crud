@@ -1,5 +1,10 @@
 <template lang="html">
-    <h1>Vue works!</h1>
+    <div>
+        <h1>Vue works!</h1>
+
+        <router-link :to="{name:'createItem'}" class="btn btn-primary">Crear item</router-link>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>

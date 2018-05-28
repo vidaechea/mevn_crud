@@ -4,6 +4,7 @@
   "description": "PoC who consist in develop a crud application with MEVN Stack",
   "main": "index.js",
   "scripts": {
+    "webpack:watch": "webpack -w",
     "start": "node src/server.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"

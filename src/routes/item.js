@@ -14,15 +14,26 @@ router.get('/', (req, res) => {
     })
 });
 
+//get data /item:id
+router.get('/:id', (req, res) => {
+    item.findById(req.params.id, function(err,item) {
+        if (err){
+            throw err;
+        } else{
+            res.json(item);
+        }
+    })
+});
+
 //add data /item - POST
 router.post('/', (req,res) => {
-   const item = new item(req.body);
-   item.save()
-       .then(item => {
-           res.status(200).json({item: '¡Item insertado correctamente!'});
+   const itemObject = new item(req.body);
+    itemObject.save()
+       .then(itemObject => {
+           res.status(200).json({item: 'Item insert succesfully!'});
        })
        .catch(err => {
-           res.status(400).send({item: '¡Error al insertar el item!'})
+           res.status(400).send({item: 'Error !'})
        });
 });
 
@@ -30,7 +41,7 @@ router.post('/', (req,res) => {
 router.put('/:id', (req,res, next) =>{
     item.findById(req.params.id, function(err,item){
         if (!item){
-            return next(new Error('No se encontró el documento'));
+            return next(new Error('Error, item not found!'));
         } else {
             item.name = req.body.name;
             item.price = req.body.price;
