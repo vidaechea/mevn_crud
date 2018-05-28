@@ -19,7 +19,7 @@ router.post('/', (req,res) => {
    const item = new item(req.body);
    item.save()
        .then(item => {
-           res.status(200).json(item: '¡Item insertado correctamente!');
+           res.status(200).json({item: '¡Item insertado correctamente!'});
        })
        .catch(err => {
            res.status(400).send({item: '¡Error al insertar el item!'})

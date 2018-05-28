@@ -4,6 +4,8 @@
   "description": "PoC who consist in develop a crud application with MEVN Stack",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,19 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "mongoose": "^5.1.2",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "vue-loader": "^15.2.1"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.11",
+    "vue": "^2.5.16",
+    "vue-axios": "^2.1.1",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4"
   }
 }
