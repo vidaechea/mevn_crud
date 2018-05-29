@@ -1,28 +1,37 @@
 <template>
-    <div>
-        <h3>Show items</h3>
-
-        <table class="table table-hover table-borderer">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="item in items">
-                    <td>{{item._id}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.price}}</td>
-                    <td>
-                        <router-link :to="{name: 'editItem', params: {id: item._id}}" class="btn btn-dark">Update</router-link>
-                        <a href="#" class="btn btn-danger" v-on:click="deleteItem(item._id)">Delete</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    Show items
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-borderer">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="item in items">
+                            <td>{{item._id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.price}}</td>
+                            <td>
+                                <router-link :to="{name: 'editItem', params: {id: item._id}}" class="btn btn-dark">
+                                    Update
+                                </router-link>
+                                <a href="#" class="btn btn-danger" v-on:click="deleteItem(item._id)">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 

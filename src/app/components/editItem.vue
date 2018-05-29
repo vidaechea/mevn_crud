@@ -1,19 +1,23 @@
 <template>
-    <div class="container">
-        <form v-on:submit.prevent="updateItem" class="card">
-            <div class="card-title">
-                <h1>Update item</h1>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <input type="text" class="form-control" v-model="item.name" placeholder="add name">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    Update a item
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control"  v-model="item.price" placeholder="add price">
+                <div class="card-body">
+                    <form v-on:submit.prevent="updateItem">
+                        <div class="form-group">
+                            <input type="text" class="form-control" v-model="item.name" placeholder="add name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" v-model="item.price" placeholder="add price">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
             </div>
-        </form>
+        </div>
     </div>
 </template>
 

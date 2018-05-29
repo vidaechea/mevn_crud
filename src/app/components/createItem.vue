@@ -1,19 +1,23 @@
 <template>
-    <div class="container">
-        <form v-on:submit.prevent="addItem" class="card">
-            <div class="card-title">
-                <h1>Add a item</h1>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <input type="text" class="form-control" v-model="item.name" placeholder="add name">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    Add a item
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control"  v-model="item.price" placeholder="add price">
+                <div class="card-body">
+                    <form v-on:submit.prevent="addItem">
+                        <div class="form-group">
+                            <input type="text" class="form-control" v-model="item.name" placeholder="add name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" v-model="item.price" placeholder="add price">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Insert</button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-primary">Insert</button>
             </div>
-        </form>
+        </div>
     </div>
 </template>
 
@@ -28,10 +32,10 @@
         methods: {
             addItem() {
                 this.axios.post('/item', this.item)
-                    .then(res=> {
+                    .then(res => {
                         this.$router.replace({name: 'displayItem'})
                     })
-                    .catch(err=>console.log(err))
+                    .catch(err => console.log(err))
             }
         }
     }
